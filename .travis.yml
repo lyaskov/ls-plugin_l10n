@@ -51,9 +51,10 @@ before_script:
   
   # Sphinx stuff
   
-  - wget http://sphinxsearch.com/files/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb -O /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
+  #- wget http://sphinxsearch.com/files/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb -O /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
   - sudo apt-get install libpq5
-  - sudo dpkg -i /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
+  - sudo apt-get install sphinxsearch
+  #- sudo dpkg -i /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
   - sudo cp ./plugins/l10n/config/sphinx.conf /etc/sphinxsearch/sphinx.conf
   - sudo indexer --all --rotate
 
