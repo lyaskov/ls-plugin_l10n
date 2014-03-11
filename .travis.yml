@@ -49,13 +49,10 @@ before_script:
   - java -jar /tmp/selenium-server-standalone.jar > /dev/null &
   - sleep 5
   
-  # get sphinxsearch
 wget http://sphinxsearch.com/files/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb -O /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
 
-# install dependency
 apt-get install libpq5
  
-# install deb package
 dpkg -i /tmp/sphinxsearch_2.0.5-release-0ubuntu11~precise2_amd64.deb
 
 indexer --all --rotate
