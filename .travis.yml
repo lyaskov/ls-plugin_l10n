@@ -58,7 +58,7 @@ before_script:
   #- sudo cp ./plugins/l10n/config/sphinx.conf /usr/local/sphinx-2.1.3/etc/sphinx.conf
   - sudo cp ./plugins/l10n/config/sphinx.conf /etc/sphinxsearch/sphinx.conf
   #- sudo /usr/bin/indexer --all --rotate
-  - su sphinxsearch -c '/usr/bin/indexer --all --rotate'
+  - sudo sphinxsearch -c '/usr/bin/indexer --all --rotate'
 
 script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/l10n/tests/behat/behat.yml' --strict
 
