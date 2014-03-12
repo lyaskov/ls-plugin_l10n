@@ -48,5 +48,12 @@ before_script:
   - wget -O /tmp/selenium-server-standalone.jar http://selenium.googlecode.com/files/selenium-server-standalone-2.33.0.jar
   - java -jar /tmp/selenium-server-standalone.jar > /dev/null &
   - sleep 5
+  
+   # Sphinx stuff
+  
+  - sudo apt-get install sphinxsearch
+  - sudo cp ./plugins/l10n/config/sphinx.conf /etc/sphinxsearch/sphinx.conf
+  - sudo /usr/bin/indexer --all --rotate
+
 
 script: HTTP_APP_ENV=test cd tests/behat/ && php behat.phar --config='../../plugins/l10n/tests/behat/behat.yml' --strict
